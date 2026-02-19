@@ -1,0 +1,116 @@
+@import url(./vars.css);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-height: 100vh;
+  font-size: var(--main-font-size);
+  font-family: var(--main-font-family);
+  font-weight: 400;
+  color: #000;
+}
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 15px;
+}
+section{
+    padding-bottom: 120px;
+}
+.main{
+    padding-top: 120px;
+}
+.title {
+  font-family: "Delius Unicase", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(auto-fit, minmax(370px, 1fr));
+  gap: 30px;
+}
+.gal__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+}
+.gal__img {
+  width: 100%;
+  height: 100%;
+}
+.gal__item_col-2 {
+  grid-column: span 2;
+}
+.gal__item_row-2 {
+  grid-row: span 2;
+}
+.gal__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  position: absolute;
+  z-index: 5;
+  color: #fff;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(
+    360deg,
+    #241f24 0%,
+    rgba(91, 91, 91, 0.45) 34.11%,
+    rgba(187, 186, 192, 0.26) 62.5%
+  );
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.gal__item:hover .gal__title {
+  background: transparent;
+}
+.gal__author {
+  font-weight: 500;
+}
+.gal__date {
+  color: #e0e0e0;
+}
+
+/* ------- HOVER EFFECT --------- */
+.hover-items {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  opacity: 0;
+  transition: 0.5s all;
+    width: 100%;
+}
+.like {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background: url(../assets/img/heart.svg);
+  
+}
+.download {
+  display: inline-block;
+  background: url(../assets/img/download.svg);
+  width: 40px;
+  height: 40px;
+  margin-right: 50px;
+}
+.gal__item:hover .hover-items {
+  top: 20px;
+  left: 20px;
+  opacity: 100%;
+}
